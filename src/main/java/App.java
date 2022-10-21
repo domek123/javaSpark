@@ -154,8 +154,14 @@ public class App {
                     "      <option value=\"3\">3</option>" +
                     "      <option value=\"4\">4</option>" +
                     "    </select></td>");
-                html.append("<td><input type='radio' value='polski' name='country'/>Polska");
-                html.append("<input type='radio' value='angielski' name='country'/>Anigielska</td>");
+                if(c.getCountry() == "polski"){
+                    html.append("<td><input type='radio' value='polski' name='country' checked=true/>Polska");
+                    html.append("<input type='radio' value='angielski' name='country'/>Anigielska</td>");
+                }else{
+                    html.append("<td><input type='radio' value='polski' name='country' />Polska");
+                    html.append("<input type='radio' value='angielski' name='country' checked=true/>Anigielska</td>");
+                }
+
                 html.append("<input type='text' name='id' value='car"+carList.indexOf(c)+"' style='display:none'/>");
                 html.append("<td><input type='submit' value='accept'> | <a href='/html'>cancel</a></td>");
                 html.append("</tr>");
